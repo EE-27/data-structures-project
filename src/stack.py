@@ -1,13 +1,14 @@
 class Node:
     """Класс для узла стека"""
 
-    def __init__(self, data, next_node):
+    def __init__(self, data, next_node=None):
         """
         Конструктор класса Node
 
         :param data: данные, которые будут храниться в узле
         """
-        pass
+        self.data = data
+        self.next_node = next_node
 
 
 class Stack:
@@ -15,7 +16,8 @@ class Stack:
 
     def __init__(self):
         """Конструктор класса Stack"""
-        pass
+
+        self.top = None  # Zásobník je zpočátku prázdný, je nastaven na hodnotu None.
 
     def push(self, data):
         """
@@ -23,7 +25,10 @@ class Stack:
 
         :param data: данные, которые будут добавлены на вершину стека
         """
-        pass
+
+        data = Node(data, self.top)  # Tento řádek vytvoří nový objekt Node se zadanými daty a aktuálním vrcholem zásobníku
+                                     # jako next_node. Tím se nový uzel vloží na vrchol zásobníku a stane se novým vrchním prvkem.
+        self.top = data  # Nově přidaný uzel, který se stane novým horním prvkem zásobníku.
 
     def pop(self):
         """
