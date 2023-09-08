@@ -2,3 +2,12 @@
 1#
 remove 'packages = [{include = "data_structures_project"}]' from pyproject.toml
 jinak: "does not contain any element"
+
+homework#1 vysvětlení hw1
+    def __init__(self):
+        self.top = None  # Zásobník je zpočátku prázdný, je nastaven na hodnotu None.
+
+    def push(self, data):
+        data = Node(data, self.top)  # Tento řádek vytvoří nový objekt Node se zadanými daty a aktuálním vrcholem zásobníku
+                                     # jako next_node. Tím se nový uzel vloží na vrchol zásobníku a stane se novým vrchním prvkem.
+        self.top = data  # Nově přidaný uzel, který se stane novým horním prvkem zásobníku.
