@@ -11,3 +11,7 @@ homework#1 vysvětlení hw1
         data = Node(data, self.top)  # Tento řádek vytvoří nový objekt Node se zadanými daty a aktuálním vrcholem zásobníku
                                      # jako next_node. Tím se nový uzel vloží na vrchol zásobníku a stane se novým vrchním prvkem.
         self.top = data  # Nově přidaný uzel, který se stane novým horním prvkem zásobníku.
+na testy --- muselo se: import unittest a pak v terminálu: python -m unittest tests.test_stack
+    pak: import unittest + import classy co se testují
+        pak: udělat klasu a inherit v ní unittest.TestCase
+            pak: nasrat tam test, ve znění: self.assertEqual apod.
