@@ -36,4 +36,16 @@ class Stack:
 
         :return: данные удаленного элемента
         """
-        pass
+        if self.top is None:  # Kontrolujeme jestli je zásobník je prázdný, pokud je, vrací None,
+            return None       # což říka, že z prázdného zásobníku není co vybírat.
+        else:
+            data = self.top.data  # Pokud zásobník není prázdný, načte tento řádek data z nejvyššího prvku zásobníku.
+                                  # self.top představuje nejvyšší prvek (objekt Node) a self.top.data zpřístupní data
+                                  # uložená v tomto prvku, která jsou poté přiřazena proměnné data.
+
+            self.top = self.top.next_node  # Po načtení dat tento řádek aktualizuje self.top tak,
+                                           # aby ukazoval na další prvek v zásobníku.
+                                           # Tím se aktuální horní prvek ze zásobníku odstraní.
+
+            return data  # Vracíme data, která byla právě odstraněna z vrcholu zásobníku.
+
