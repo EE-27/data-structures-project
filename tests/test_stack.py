@@ -25,3 +25,17 @@ class testStack(unittest.TestCase):
         self.assertEqual(stack_push.top.next_node.data, "B")
         self.assertEqual(stack_push.top.next_node.next_node.data, "A")
         self.assertIsNone(stack_push.top.next_node.next_node.next_node)
+
+    def test_pop(self):
+        stack = Stack()
+        stack.push("A")
+        data = stack.pop()
+        self.assertIsNone(stack.top)
+        self.assertEqual(data, "A")
+
+        stack = Stack()
+        stack.push("A")
+        stack.push("B")
+        data = stack.pop()
+        self.assertEqual(stack.top.data, "A")
+        self.assertEqual(data, "B")
